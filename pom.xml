@@ -23,6 +23,7 @@
     <javax.el>3.0.1-b10</javax.el>
     <logback>1.2.3</logback>
     <slf4j>1.7.25</slf4j>
+    <commons-long3>3.8.1</commons-long3>
 
   </properties>
 
@@ -93,6 +94,14 @@
       <artifactId>logback-classic</artifactId>
       <version>${logback}</version>
     </dependency>
+
+    <!-- commons long 3 -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>${commons-long3}</version>
+    </dependency>
+
 
   </dependencies>
 
