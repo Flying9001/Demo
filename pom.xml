@@ -24,6 +24,7 @@
     <logback>1.2.3</logback>
     <slf4j>1.7.25</slf4j>
     <commons-long3>3.8.1</commons-long3>
+    <mybatis>3.4.6</mybatis>
 
   </properties>
 
@@ -102,6 +103,12 @@
       <version>${commons-long3}</version>
     </dependency>
 
+    <!-- mybatis -->
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis</artifactId>
+      <version>${mybatis}</version>
+    </dependency>
 
   </dependencies>
 

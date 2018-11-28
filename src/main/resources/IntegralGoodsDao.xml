@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.demo.dao.IntegralGoodsDao">
+
+	<!-- 查询结果封装 -->
+    <resultMap type="com.demo.model.entity.IntegralGoodsEntity" id="integralGoodsMap">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="integral" column="integral"/>
+        <result property="description" column="description"/>
+        <result property="stockCount" column="stock_count"/>
+        <result property="status" column="status"/>
+        <result property="language" column="language"/>
+        <result property="platform" column="platform"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="versions" column="versions"/>
+        <result property="del" column="del"/>
+		<collection property="goodsImgList" javaType="java.util.List" ofType="com.demo.model.entity.IntegralGoodsImgEntity">
+			<result property="imgUrl" column="i_img_url" />
+			<result property="createTime" column="i_create_time" />
+		</collection>
+		<collection property="goodsColorList" javaType="java.util.List" ofType="com.demo.model.entity.Color">
+			<result property="id" column="c_id" />
+			<result property="name" column="c_name" />
+			<result property="value" column="c_value" />
+		</collection>
+    </resultMap>
+
+	<!-- 积分商品基础字段 -->
+	<sql id="integral_goods_base_field">
+		`id`, `name`, `integral`, `description`, `stock_count`, `status`, `language`,
+		`platform`, `create_time`, `update_time`, `versions`, `del`
+	</sql>
+
+	<!-- 积分商品详细信息字段 -->
+	<sql id="integral_goods_info_field">
+		ig.id, ig.name, ig.integral, ig.description, ig.stock_count, ig.status, ig.language,
+		ig.platform, DATE_FORMAT(ig.create_time,"%Y-%m-%d %T") as create_time,
+		DATE_FORMAT(ig.update_time,"%Y-%m-%d %T") as update_time, ig.versions, ig.del,
+		i.img_url i_img_url,i.create_time i_create_time,
+		c.id c_id, c.name c_name,c.value c_value
+	</sql>
+
+	<!-- 查询积分商品详情 -->
+	<select id="queryObject" parameterType="com.demo.model.entity.IntegralGoodsEntity" resultMap="integralGoodsMap">
+		select
+		    <include refid="integral_goods_info_field" />
+		from integral_goods ig
+		LEFT JOIN integral_goods_img i
+		ON ig.id = i.goods_id
+		LEFT JOIN integral_goods_color gc
+		ON ig.id = gc.goods_id
+		LEFT JOIN t_color c
+		ON gc.color_id = c.id
+		where ig.id = #{id} and i.del = 0 and gc.del = 0 and c.del = 0
+	</select>
+
+	<!-- 查询列表 -->
+	<select id="queryList" parameterType="java.util.Map" resultMap="integralGoodsMap">
+		select
+		    <include refid="integral_goods_info_field" />
+		from (
+		    select
+		        <include refid="integral_goods_base_field" />
+		    from integral_goods
+		    where del = 0
+			<choose>
+				<when test="sidx != null and sidx.trim() != ''">
+					order by ${sidx} ${order}
+				</when>
+				<otherwise>
+					order by id desc
+				</otherwise>
+			</choose>
+			<if test="offset != null and limit != null">
+				limit #{offset}, #{limit}
+			</if>
+		) ig
+		LEFT JOIN integral_goods_img i
+		ON ig.id = i.goods_id
+		LEFT JOIN integral_goods_color gc
+		ON ig.id = gc.goods_id
+		LEFT JOIN t_color c
+		ON gc.color_id = c.id
+		where i.del = 0 and gc.del = 0 and c.del = 0
+	</select>
+
+	<!-- 统计积分商品数量 -->
+ 	<select id="queryCount" resultType="int">
+		select count(*) from integral_goods ig where ig.del = 0
+	</select>
+
+</mapper>
