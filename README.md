@@ -33,6 +33,24 @@ mybatis 的配置应用, shiro 的配置应用, Maven 项目的搭建等
 
 [com.ljq.demo.util.BeanValidateUtilTest](src/test/java/com/ljq/demo/util/BeanValidateUtilTest.java "src/test/java/com/ljq/demo/util/BeanValidateUtilTest.java")  
 
+### 6 java 分页查询工具---2018-11-29    
+
+[com.ljq.demo.util.QueryUtil](src/main/java/com/ljq/demo/util/QueryUtil.java "src/main/java/com/ljq/demo/util/QueryUtil.java")  
+
+[com.ljq.demo.util.PageUtil](src/main/java/com/ljq/demo/util/PageUtil.java "src/main/java/com/ljq/demo/util/PageUtil.java")  
+
+### 7 java 防止 SQL 注入工具类---2018-11-29  
+
+[com.ljq.demo.util.SQLCheckUtil](src/main/java/com/ljq/demo/util/SQLCheckUtil.java "src/main/java/com/ljq/demo/util/SQLCheckUtil.java")  
+
+### 8 mybatis mapper 文件模板与规范---2018-11-29    
+
+[src/main/resources/IntegralGoodsDao.xml](src/main/resources/IntegralGoodsDao.xml "src/main/resources/IntegralGoodsDao.xml")  
+
+
+
+
+
 
 
 
