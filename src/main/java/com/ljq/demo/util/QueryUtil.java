@@ -42,7 +42,12 @@ public class QueryUtil extends HashMap<String, Object> implements Serializable {
      * 有参构造方法
      *
      * @param queryMap 包含分页查询参数的 map 集合
-     * @throws Exception
+     *     map 中需要包含的分页参数:
+     *         currPage: 当前页数
+     *         pageLimit: 每页显示条数
+     *         sidx: 排序依据,如按照 "id" 排序,则 map.put("sidx","id")
+     *         order: 排序规则,升序(asc)或者降序(desc),如升序排序,则 map.put("order","desc")
+     * @throws Exception sql 参数不合法
      */
     public QueryUtil(Map<String, Object> queryMap) throws Exception {
 
