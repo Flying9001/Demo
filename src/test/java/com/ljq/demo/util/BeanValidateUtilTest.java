@@ -18,6 +18,15 @@ public class BeanValidateUtilTest {
 
         List<ValidationDemoChildBean> demoChildBeanList = new ArrayList<>(16);
         List<ValidationDemoBean> demoBeanList = new ArrayList<>(16);
+
+        /**
+         * case 0 测试属性非空,字符串属性设置为 ""
+         */
+        ValidationDemoChildBean demoChildBean0 = new ValidationDemoChildBean();
+        demoChildBean0.setHeight(12);
+        demoChildBean0.setPhone("");
+        demoChildBeanList.add(demoChildBean0);
+
         /**
          * case 1 测试属性非空
          */
@@ -76,7 +85,7 @@ public class BeanValidateUtilTest {
 
         for (int i = 0; i < demoChildBeanList.size(); i++) {
             String validResult = BeanValidateUtil.validate(demoChildBeanList.get(i));
-            logger.debug("case {} : {}", (i + 1), validResult);
+            logger.debug("case {} : {}", i, validResult);
         }
         for (int j = 0; j < demoBeanList.size(); j++) {
             String validResult = BeanValidateUtil.validate(demoBeanList.get(j));

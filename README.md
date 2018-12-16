@@ -8,7 +8,7 @@ mybatis 的配置应用, shiro 的配置应用, Maven 项目的搭建等
 ### 1 一个标准的 java bean 写法  
 
 可参考: [com.ljq.demo.bean.JavaBeanDemo](src/main/java/com/ljq/demo/bean/JavaBeanDemo.java)  
-        
+​        
 ### 2 标准的 Java 工具类(util)写法  
 
 可参考: [com.ljq.demo.util.JavaUtilDemo](src/main/java/com/ljq/demo/util/JavaUtilDemo.java)  
@@ -27,11 +27,9 @@ mybatis 的配置应用, shiro 的配置应用, Maven 项目的搭建等
 
 ### 5 java validation 参数校验  
 
-可参考:    
+[参数校验-1-validation注解--2018-12-16](doc/1.参数校验-1-validation注解.md "doc/1.参数校验-1-validation注解.md")  
 
-[com.ljq.demo.bean.ValidationDemoBean](src/main/java/com/ljq/demo/bean/ValidationDemoBean.java "src/main/java/com/ljq/demo/bean/ValidationDemoBean.java")  
-
-[com.ljq.demo.util.BeanValidateUtilTest](src/test/java/com/ljq/demo/util/BeanValidateUtilTest.java "src/test/java/com/ljq/demo/util/BeanValidateUtilTest.java")  
+[参数校验-2-自定义注解--2018-12-16](doc/2.参数校验-2-自定义注解.md "doc/2.参数校验-2-自定义注解.md")  
 
 ### 6 java 分页查询工具---2018-11-29    
 
