@@ -25,6 +25,7 @@
     <slf4j>1.7.25</slf4j>
     <commons-long3>3.8.1</commons-long3>
     <mybatis>3.4.6</mybatis>
+    <servlet-api.version>4.0.1</servlet-api.version>
 
   </properties>
 
@@ -108,6 +109,12 @@
       <groupId>org.mybatis</groupId>
       <artifactId>mybatis</artifactId>
       <version>${mybatis}</version>
+    </dependency>
+    <!-- Servlet -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>${servlet-api.version}</version>
     </dependency>
 
   </dependencies>
