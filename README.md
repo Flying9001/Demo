@@ -45,6 +45,26 @@ mybatis 的配置应用, shiro 的配置应用, Maven 项目的搭建等
 
 [src/main/resources/IntegralGoodsDao.xml](src/main/resources/IntegralGoodsDao.xml "src/main/resources/IntegralGoodsDao.xml")  
 
+### 9 对象创建规范 --- 2019-06-30  
+
+#### 9.1 静态工厂方法  
+
+```
+../src/main/java/com/ljq/demo/object/StaticMethodDemo.java
+../src/test/java/com/ljq/demo/object/StaticMethodDemoTest.java
+```
+
+#### 9.2 构建器  
+
+```
+../src/main/java/com/ljq/demo/object/BuilderUserDemo.java
+../src/test/java/com/ljq/demo/object/BuilderUserDemoTest.java
+
+../src/main/java/com/ljq/demo/object/BuilderPizzaDemo.java
+../src/main/java/com/ljq/demo/object/BuilderSweetPizzaDemo.java
+../src/test/java/com/ljq/demo/object/BuilderSweetPizzaDemoTest.java
+```
+
 
 
 
