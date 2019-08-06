@@ -10,7 +10,27 @@ import java.util.Map;
 public class PageUtilTest {
 
     @Test
-    public void getPageUtil() {
+    public void queryUtilTest() throws Exception {
+        Map<String, Object> queryMap = new HashMap<>(16);
+        queryMap.put("currPage", 2);
+        queryMap.put("pageLimit", 6);
+        queryMap.put("direction", "ASC");
+        queryMap.put("properties", "account");
+        QueryUtil queryUtil = new QueryUtil(queryMap);
+
+        System.out.println(queryUtil);
+
+        System.out.println("-------------------------");
+
+        queryMap.clear();
+        queryUtil = new QueryUtil(queryMap);
+        System.out.println(queryUtil);
+
+    }
+
+
+    @Test
+    public void pageUtilTest() {
 
         int totalCount = 24;
         int pageLimit = 5;
@@ -24,32 +44,21 @@ public class PageUtilTest {
 
     }
 
-    /**
-     * 实际业务中 service 实现类中应用分页查询
-     * @throws Exception
-     */
     @Test
-    public void serviceImplQueryTest() throws Exception {
+    public void queryUtilAndPageUtilTest() throws Exception {
 
-        int page = -1;
-        int limit = 1;
-        String sidx = "insert_time";
-        String order = "desc";
+        int totalCount = 19;
+        List<String> stringList = new ArrayList<>(16);
+        for (int i = 0; i < totalCount; i++) {
+            stringList.add(String.valueOf(i));
+        }
+
         Map<String, Object> queryMap = new HashMap<>(16);
-        queryMap.put("currPage", page);
-        queryMap.put("pageLimit", limit);
-        queryMap.put("sidx", sidx);
-        queryMap.put("order", order);
-
         QueryUtil queryUtil = new QueryUtil(queryMap);
+        PageUtil<String> pageUtil = new PageUtil<>(stringList, totalCount, queryUtil.getPageLimit(), queryUtil.getCurrPage());
 
-        /**
-         * IntegralGoodsEntity,integralGoodsDao 仅作为演示,该 demo 项目中并不包含
-         */
-//        List<IntegralGoodsEntity> integralGoodsList = integralGoodsDao.queryList(queryUtil);
-//        int total = integralGoodsDao.queryCount(queryUtil);
-//        PageUtil pageUtil = new PageUtil(integralGoodsList, total, queryUtil.getLimit(), queryUtil.getPage());
-
+        System.out.println(queryUtil);
+        System.out.println(pageUtil);
 
 
     }
