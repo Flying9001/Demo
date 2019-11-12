@@ -28,6 +28,7 @@ public interface BaseDao<T> {
 
     /**
      * 批量保存、插入
+     *
      * @param list
      * @return
      */
@@ -75,27 +76,41 @@ public interface BaseDao<T> {
 
     /**
      * 查询单个对象
-     * @param obj
+     *     确定最多只返回一条数据
+     *
+     * @param t
      * @return
      */
-    <E> List<E> queryObject(T obj);
+    T queryObject(T t);
+
+    /**
+     * 查询单个对象
+     *    返回数据条数可能为多条
+     *
+     * @param t
+     * @return
+     */
+    <E> List<E> queryObjectMuitl(T t);
 
     /**
      * 查询列表
+     *
+     * @param t
+     * @return
+     */
+    <E> List<E> queryList(T t);
+
+    /**
+     * 查询列表
+     *
      * @param map 复杂参数
      * @return
      */
-    <E> List<E> queryList(Map<String, Object> map);
+    <E> List<E> queryListComplex(Map<String, Object> map);
 
     /**
      * 查询列表
-     * @param obj
-     * @return
-     */
-    <E> List<E> queryList(T obj);
-
-    /**
-     * 查询列表
+     *
      * @param t
      * @return
      */
@@ -103,22 +118,26 @@ public interface BaseDao<T> {
 
     /**
      * 统计查询个数
-     * @param map
-     * @return
-     */
-    int queryCount(Map<String, Object> map);
-
-    /**
-     * 统计查询个数
+     *
      * @param t
      * @return
      */
-    int queryCount(T t);
+    int count(T t);
 
     /**
      * 统计查询个数
+     *
+     * @param map 复杂参数
      * @return
      */
-    int queryCount();
+    int countComplex(Map<String, Object> map);
+
+    /**
+     * 统计查询个数
+     *
+     * @return
+     */
+    int countAll();
+
 
 }

@@ -65,6 +65,20 @@ mybatis 的配置应用, shiro 的配置应用, Maven 项目的搭建等
 ../src/test/java/com/ljq/demo/object/BuilderSweetPizzaDemoTest.java
 ```
 
+### 10  java bean 对象复制  
+
+```
+../src/test/java/com/ljq/demo/bean/JavaBeanDemoTest.java
+```
+
+### 11 基础 DAO  
+
+```
+../src/main/java/com/ljq/demo/base/BaseDao.java
+```
+
+
+
 
 
 
