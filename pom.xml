@@ -18,7 +18,7 @@
     <java.version>1.8</java.version>
     <junit>4.12</junit>
     <lombok>1.18.0</lombok>
-    <jackson>2.9.6</jackson>
+    <jackson>2.10.0</jackson>
     <hibernate.validator>6.0.13.Final</hibernate.validator>
     <javax.el>3.0.1-b10</javax.el>
     <logback>1.2.3</logback>
@@ -26,6 +26,7 @@
     <commons-long3>3.8.1</commons-long3>
     <mybatis>3.4.6</mybatis>
     <servlet-api.version>4.0.1</servlet-api.version>
+    <hutool.version>5.0.5</hutool.version>
 
   </properties>
 
@@ -116,6 +117,13 @@
       <artifactId>javax.servlet-api</artifactId>
       <version>${servlet-api.version}</version>
     </dependency>
+    <!-- hutool 一系列java常用工具类封装 -->
+    <dependency>
+      <groupId>cn.hutool</groupId>
+      <artifactId>hutool-core</artifactId>
+      <version>${hutool.version}</version>
+    </dependency>
+
 
   </dependencies>
 
