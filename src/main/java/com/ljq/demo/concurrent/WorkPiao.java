@@ -28,4 +28,11 @@ public class WorkPiao implements Runnable {
         }
 
     }
+
+    /**
+     * 使用 Junit 进行抢票测试，主线程结束整个程序就会结束,即使票没有被抢完
+     * 可参考: com.ljq.demo.concurrent.WorkPiaoTest
+     * 使用包含 main() 方法的java程序进行抢票测试,则可以将所有的票抢完
+     * 可参考: com.ljq.demo.concurrent.PiaoDemo
+     */
 }

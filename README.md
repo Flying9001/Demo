@@ -77,6 +77,32 @@ mybatis 的配置应用, shiro 的配置应用, Maven 项目的搭建等
 ../src/main/java/com/ljq/demo/base/BaseDao.java
 ```
 
+### 12 java 多线程
+
+#### 12.1 抢票程序与测试   
+
+```
+../src/main/java/com/ljq/demo/concurrentWorkPiao.java
+../src/main/java/com/ljq/demo/concurrent/PiaoDemo.java
+../src/test/java/com/ljq/demo/concurrent/WorkPiaoTest.java
+```
+
+#### 12.2 多个线程等待一个线程 CountDownLatch  
+
+```
+../src/main/java/com/ljq/demo/concurrent/Worker.java
+../src/main/java/com/ljq/demo/concurrent/CountDownLatchDemo.java
+```
+
+#### 12.3 模拟多线程操作共享变量  
+
+```
+../src/main/java/com/ljq/demo/concurrent/WorkCalculate.java
+../src/main/java/com/ljq/demo/concurrent/CalculateDemo.java
+```
+
+
+
 
 
 
