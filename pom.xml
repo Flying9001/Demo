@@ -27,6 +27,7 @@
     <mybatis>3.4.6</mybatis>
     <servlet-api.version>4.0.1</servlet-api.version>
     <hutool.version>5.0.5</hutool.version>
+    <mysql.version>8.0.18</mysql.version>
 
   </properties>
 
@@ -122,6 +123,13 @@
       <groupId>cn.hutool</groupId>
       <artifactId>hutool-core</artifactId>
       <version>${hutool.version}</version>
+    </dependency>
+    <!-- mysql -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>${mysql.version}</version>
+      <scope>runtime</scope>
     </dependency>
 
 

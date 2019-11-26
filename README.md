@@ -101,6 +101,13 @@ mybatis 的配置应用, shiro 的配置应用, Maven 项目的搭建等
 ../src/main/java/com/ljq/demo/concurrent/CalculateDemo.java
 ```
 
+### 13 批量插入大量测试数据  
+
+```
+../src/main/java/com/ljq/demo/util/DataSourceUtil.java
+../src/test/java/com/ljq/demo/util/DataSourceUtilTest.java
+```
+
 
 
 
