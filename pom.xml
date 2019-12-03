@@ -28,6 +28,7 @@
     <servlet-api.version>4.0.1</servlet-api.version>
     <hutool.version>5.0.5</hutool.version>
     <mysql.version>8.0.18</mysql.version>
+    <auth.jwt.version>3.8.3</auth.jwt.version>
 
   </properties>
 
@@ -131,6 +132,13 @@
       <version>${mysql.version}</version>
       <scope>runtime</scope>
     </dependency>
+    <!-- jwt,OAuth -->
+    <dependency>
+      <groupId>com.auth0</groupId>
+      <artifactId>java-jwt</artifactId>
+      <version>${auth.jwt.version}</version>
+    </dependency>
+
 
 
   </dependencies>
