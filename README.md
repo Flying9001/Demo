@@ -50,31 +50,31 @@ mybatis 的配置应用, shiro 的配置应用, Maven 项目的搭建等
 #### 9.1 静态工厂方法  
 
 ```
-../src/main/java/com/ljq/demo/object/StaticMethodDemo.java
-../src/test/java/com/ljq/demo/object/StaticMethodDemoTest.java
+./src/main/java/com/ljq/demo/object/StaticMethodDemo.java
+./src/test/java/com/ljq/demo/object/StaticMethodDemoTest.java
 ```
 
 #### 9.2 构建器  
 
 ```
-../src/main/java/com/ljq/demo/object/BuilderUserDemo.java
-../src/test/java/com/ljq/demo/object/BuilderUserDemoTest.java
+./src/main/java/com/ljq/demo/object/BuilderUserDemo.java
+./src/test/java/com/ljq/demo/object/BuilderUserDemoTest.java
 
-../src/main/java/com/ljq/demo/object/BuilderPizzaDemo.java
-../src/main/java/com/ljq/demo/object/BuilderSweetPizzaDemo.java
-../src/test/java/com/ljq/demo/object/BuilderSweetPizzaDemoTest.java
+./src/main/java/com/ljq/demo/object/BuilderPizzaDemo.java
+./src/main/java/com/ljq/demo/object/BuilderSweetPizzaDemo.java
+./src/test/java/com/ljq/demo/object/BuilderSweetPizzaDemoTest.java
 ```
 
 ### 10  java bean 对象复制  
 
 ```
-../src/test/java/com/ljq/demo/bean/JavaBeanDemoTest.java
+./src/test/java/com/ljq/demo/bean/JavaBeanDemoTest.java
 ```
 
 ### 11 基础 DAO  
 
 ```
-../src/main/java/com/ljq/demo/base/BaseDao.java
+./src/main/java/com/ljq/demo/base/BaseDao.java
 ```
 
 ### 12 java 多线程
@@ -82,30 +82,37 @@ mybatis 的配置应用, shiro 的配置应用, Maven 项目的搭建等
 #### 12.1 抢票程序与测试   
 
 ```
-../src/main/java/com/ljq/demo/concurrentWorkPiao.java
-../src/main/java/com/ljq/demo/concurrent/PiaoDemo.java
-../src/test/java/com/ljq/demo/concurrent/WorkPiaoTest.java
+./src/main/java/com/ljq/demo/concurrentWorkPiao.java
+./src/main/java/com/ljq/demo/concurrent/PiaoDemo.java
+./src/test/java/com/ljq/demo/concurrent/WorkPiaoTest.java
 ```
 
 #### 12.2 多个线程等待一个线程 CountDownLatch  
 
 ```
-../src/main/java/com/ljq/demo/concurrent/Worker.java
-../src/main/java/com/ljq/demo/concurrent/CountDownLatchDemo.java
+./src/main/java/com/ljq/demo/concurrent/Worker.java
+./src/main/java/com/ljq/demo/concurrent/CountDownLatchDemo.java
 ```
 
 #### 12.3 模拟多线程操作共享变量  
 
 ```
-../src/main/java/com/ljq/demo/concurrent/WorkCalculate.java
-../src/main/java/com/ljq/demo/concurrent/CalculateDemo.java
+./src/main/java/com/ljq/demo/concurrent/WorkCalculate.java
+./src/main/java/com/ljq/demo/concurrent/CalculateDemo.java
 ```
 
 ### 13 批量插入大量测试数据  
 
 ```
-../src/main/java/com/ljq/demo/util/DataSourceUtil.java
-../src/test/java/com/ljq/demo/util/DataSourceUtilTest.java
+./src/main/java/com/ljq/demo/util/DataSourceUtil.java
+./src/test/java/com/ljq/demo/util/DataSourceUtilTest.java
+```
+
+### 14 java JWT example  
+
+```
+./src/main/java/com/ljq/demo/util/JwtUtil.java
+./src/test/java/com/ljq/demo/util/JwtUtilTest.java
 ```
 
 
