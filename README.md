@@ -19,11 +19,21 @@ mybatis 的配置应用, shiro 的配置应用, Maven 项目的搭建等
 
 ### 4 jackson 解析复杂 json  
 
-可参考:   
+已知所有节点Key
 
-[com.ljq.demo.util.LogisticsUtils](src/main/java/com/ljq/demo/util/LogisticsUtils.java "src/main/java/com/ljq/demo/util/LogisticsUtils.java")  
+```
+./src/main/java/com/ljq/demo/util/LogisticsUtils.java
+./src/test/java/com/ljq/demo/util/LogisticsUtilsTest.java
+```
 
-[com.ljq.demo.util.LogisticsUtilsTest](src/test/java/com/ljq/demo/util/LogisticsUtilsTest.java "src/test/java/com/ljq/demo/util/LogisticsUtilsTest.java")  
+已知 Json 结构，但未知子节点 Key
+
+```
+./src/main/java/com/ljq/demo/bean/FormAreaInfo.java
+./src/main/java/com/ljq/demo/constant/FormConst.java
+./src/main/java/com/ljq/demo/util/JsonUtil.java
+./src/test/java/com/ljq/demo/util/JsonUtilTest.java
+```
 
 ### 5 java validation 参数校验  
 
@@ -113,6 +123,39 @@ mybatis 的配置应用, shiro 的配置应用, Maven 项目的搭建等
 ```
 ./src/main/java/com/ljq/demo/util/JwtUtil.java
 ./src/test/java/com/ljq/demo/util/JwtUtilTest.java
+```
+
+### 15 Java 8 遍历迭代器  
+
+```
+./src/test/java/com/ljq/demo/util/IteratorTest.java
+```
+
+[Java 8 遍历迭代器 Iterator](https://blog.csdn.net/mrqiang9001/article/details/108275318 "https://blog.csdn.net/mrqiang9001/article/details/108275318")  
+
+### 16 手动获取 Spring Bean  
+
+```
+./src/main/java/com/ljq/demo/util/SpringBeanUtil.java
+```
+
+注意事项: 需要 Spring 扫描到对应的包才能装载  
+
+### 17 数据库操作工具类  
+
+多种数据库自动识别与操作  
+
+```
+./src/main/java/com/ljq/demo/bean/Column.java
+./src/main/java/com/ljq/demo/bean/Table.java
+./src/main/java/com/ljq/demo/constant/DbTypeConst.java
+./src/main/java/com/ljq/demo/enums/ColumnType.java
+
+./src/main/java/com/ljq/demo/util/db/AbstractDbOperator.java
+./src/main/java/com/ljq/demo/util/db/MySqlOperator.java
+./src/main/java/com/ljq/demo/util/db/OracleOperator.java
+./src/main/java/com/ljq/demo/util/db/SqlServerOperator.java
+./src/main/java/com/ljq/demo/util/db/DbOperatorFactory.java
 ```
 
 

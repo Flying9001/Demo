@@ -26,9 +26,11 @@
     <commons-long3>3.8.1</commons-long3>
     <mybatis>3.4.6</mybatis>
     <servlet-api.version>4.0.1</servlet-api.version>
-    <hutool.version>5.0.5</hutool.version>
+    <hutool.version>5.4.0</hutool.version>
     <mysql.version>8.0.18</mysql.version>
     <auth.jwt.version>3.8.3</auth.jwt.version>
+    <spring.version>5.2.8.RELEASE</spring.version>
+    <jedis.version>3.3.0</jedis.version>
 
   </properties>
 
@@ -122,7 +124,7 @@
     <!-- hutool 一系列java常用工具类封装 -->
     <dependency>
       <groupId>cn.hutool</groupId>
-      <artifactId>hutool-core</artifactId>
+      <artifactId>hutool-all</artifactId>
       <version>${hutool.version}</version>
     </dependency>
     <!-- mysql -->
@@ -138,7 +140,23 @@
       <artifactId>java-jwt</artifactId>
       <version>${auth.jwt.version}</version>
     </dependency>
-
+    <!-- Redis -->
+    <dependency>
+      <groupId>redis.clients</groupId>
+      <artifactId>jedis</artifactId>
+      <version>${jedis.version}</version>
+    </dependency>
+    <!-- Spring -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
 
 
   </dependencies>
