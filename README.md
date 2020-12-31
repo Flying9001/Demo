@@ -164,7 +164,21 @@ mybatis 的配置应用, shiro 的配置应用, Maven 项目的搭建等
 ./src/main/java/com/ljq/demo/util/ReflectDemo.java
 ```
 
+### 19 常量定义  
+    
+非集合类常量  
 
+```
+./src/main/java/com/ljq/demo/constant/DemoConst.java
+```
+
+集合类常量  
+    
+```
+./src/main/java/com/ljq/demo/constant/DemoEnum.java
+./src/test/java/com/ljq/demo/constant/DemoEnumTest.java
+```
+    
 
 
 
