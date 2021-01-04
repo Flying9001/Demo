@@ -31,6 +31,7 @@
     <auth.jwt.version>3.8.3</auth.jwt.version>
     <spring.version>5.2.8.RELEASE</spring.version>
     <jedis.version>3.3.0</jedis.version>
+    <mongodb-driver.version>3.12.7</mongodb-driver.version>
 
   </properties>
 
@@ -157,6 +158,13 @@
       <artifactId>spring-context</artifactId>
       <version>${spring.version}</version>
     </dependency>
+    <!-- mongodb -->
+    <dependency>
+      <groupId>org.mongodb</groupId>
+      <artifactId>mongo-java-driver</artifactId>
+      <version>${mongodb-driver.version}</version>
+    </dependency>
+
 
 
   </dependencies>
