@@ -165,7 +165,7 @@ mybatis 的配置应用, shiro 的配置应用, Maven 项目的搭建等
 ```
 
 ### 19 常量定义  
-    
+
 非集合类常量  
 
 ```
@@ -178,7 +178,37 @@ mybatis 的配置应用, shiro 的配置应用, Maven 项目的搭建等
 ./src/main/java/com/ljq/demo/constant/DemoEnum.java
 ./src/test/java/com/ljq/demo/constant/DemoEnumTest.java
 ```
-    
+
+### 20 MongoDB   
+
+MongoDB 部分特性:  
+
+- MongoDB 中的集合对应关系型数据库中的表  
+- MongoDB 在向集合中添加数据时如果集合不存在，则直接创建集合  
+- MongoDB 插入数据时会自动生成唯一ID(`_id`)  
+
+MongoDB 基本操作示例:  
+
+```
+./src/main/java/com/ljq/demo/util/MongoDbUtil.java
+./src/test/java/com/ljq/demo/util/MongoDbUtilTest.java
+```
+
+MongoDB 驱动 Maven 依赖:  
+
+```xml
+    <!-- mongodb -->
+    <dependency>
+      <groupId>org.mongodb</groupId>
+      <artifactId>mongo-java-driver</artifactId>
+      <version>${mongodb-driver.version}</version>
+    </dependency>
+```
+
+其中 `${mongodb-driver.version}` 的版本为 `3.12.7`  
+
+测试所用 MongoDB 的版本为: `4.4`  
+
 
 
 
