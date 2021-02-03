@@ -217,6 +217,14 @@ MongoDB 驱动 Maven 依赖:
 ./src/test/java/com/ljq/demo/util/StringArrayUtilTest.java
 ```
 
+### 22 金融计算工具类  
+
+```
+./src/main/java/com/ljq/demo/util/CalculateUtil.java
+
+./src/test/java/com/ljq/demo/util/CalculateUtilTest.java
+```
+
 
 
 
