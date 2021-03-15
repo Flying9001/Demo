@@ -225,6 +225,24 @@ MongoDB 驱动 Maven 依赖:
 ./src/test/java/com/ljq/demo/util/CalculateUtilTest.java
 ```
 
+### 23 金融-收付款计划  
+
+合同的收款计划、付款计划生成  
+
+```
+./src/main/java/com/ljq/demo/bean/PaymentPlanBean.java
+./src/main/java/com/ljq/demo/constant/PaymentPlanConst.java
+./src/main/java/com/ljq/demo/util/CalculateUtil.java
+./src/main/java/com/ljq/demo/util/FinanceDateUtil.java
+./src/main/java/com/ljq/demo/util/FinanceUtil.java
+
+./src/test/java/com/ljq/demo/util/FinanceUtilTest.java
+```
+
+  
+
+
+
 
 
 

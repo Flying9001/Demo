@@ -13,10 +13,10 @@ public class DemoConst {
     /**
      * 字符串常量
      */
-    public static final String str_const = "string";
+    public static final String STR_CONST = "string";
     /**
      * 数字常量
      */
-    public static final int int_const = 666;
+    public static final int INT_CONST = 666;
 
 }

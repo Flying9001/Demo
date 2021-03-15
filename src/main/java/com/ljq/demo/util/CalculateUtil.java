@@ -79,7 +79,7 @@ public class CalculateUtil {
      * @return 两个参数的乘积
      */
     public static BigDecimal multiply(double var1, double var2,int scale, int resultScale){
-        return multiply(var1, var2, scale).setScale(resultScale);
+        return multiply(var1, var2, scale).setScale(resultScale, RoundingMode.HALF_DOWN);
     }
 
     /**
@@ -109,7 +109,7 @@ public class CalculateUtil {
      * @return 两个参数的商
      */
     public static BigDecimal divide(double var1, double var2, int scale, int resultScale){
-        return divide(var1, var2, scale).setScale(resultScale);
+        return divide(var1, var2, scale).setScale(resultScale, RoundingMode.HALF_DOWN);
     }
 
     /**
