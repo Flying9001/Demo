@@ -239,7 +239,17 @@ MongoDB 驱动 Maven 依赖:
 ./src/test/java/com/ljq/demo/util/FinanceUtilTest.java
 ```
 
-  
+### 24 线程池规范使用示例  
+
+```
+// 线程任务,工作负载
+./src/main/java/com/ljq/demo/concurrent/DrinkTask.java
+// 简易线程池工具类
+./src/main/java/com/ljq/demo/util/ThreadPoolUtil.java
+// 线程池使用示例(包括第三方工具)
+./src/main/java/com/ljq/demo/concurrent/DrinkThreadPoolDemo.java
+```
+
 
 
 
