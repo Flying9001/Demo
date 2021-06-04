@@ -19,7 +19,7 @@
     <junit>4.12</junit>
     <lombok>1.18.0</lombok>
     <jackson>2.10.0</jackson>
-    <hibernate.validator>6.1.1.Final</hibernate.validator>
+    <hibernate.validator>6.1.5.Final</hibernate.validator>
     <javax.el>3.0.1-b10</javax.el>
     <logback>1.2.3</logback>
     <slf4j>1.7.25</slf4j>
