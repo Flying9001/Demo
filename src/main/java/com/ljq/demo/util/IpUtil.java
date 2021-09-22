@@ -1,6 +1,7 @@
 package com.ljq.demo.util;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Random;
 
 /**
  * @Description: http 工具类
@@ -35,6 +36,17 @@ public class IpUtil {
             ip = request.getRemoteAddr();
         }
         return ip;
+    }
+
+    /**
+     * 生成随机 ip
+     *
+     * @return
+     */
+    public static String generateRandomIp() {
+        Random r = new Random();
+        return r.nextInt(256) + "." + r.nextInt(256) + "." + r.nextInt(256) + "."
+                + r.nextInt(256);
     }
 
 }

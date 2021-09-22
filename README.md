@@ -250,6 +250,41 @@ MongoDB 驱动 Maven 依赖:
 ./src/main/java/com/ljq/demo/concurrent/DrinkThreadPoolDemo.java
 ```
 
+### 25 地理位置操作工具  
+
+```
+// 计算两点经纬度之间的距离
+./src/main/java/com/ljq/demo/util/LocationUtil#getDistance
+// 通过 ip 获取所属城市信息(ip 转城市)
+./src/main/java/com/ljq/demo/util/LocationUtil#getRegionFromIp
+// 测试用例
+./src/test/java/com/ljq/demo/util/LocationUtilTest.java
+```
+
+Maven 依赖  
+
+```xml
+    <!-- google 地图距离计算 -->
+    <dependency>
+      <groupId>org.gavaghan</groupId>
+      <artifactId>geodesy</artifactId>
+      <version>${geodesy.version}</version>
+    </dependency>
+    <!-- ip to region -->
+    <dependency>
+      <groupId>org.lionsoul</groupId>
+      <artifactId>ip2region</artifactId>
+      <version>${ip2region.version}</version>
+    </dependency>
+```
+
+### 26 ip 工具类  
+
+```
+// 生成随机 ip
+./src/main/java/com/ljq/demo/util/IpUtil#generateRandomIp
+```
+
 
 
 
