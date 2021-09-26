@@ -1,11 +1,6 @@
 package com.ljq.demo.util;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAdjusters;
 import java.util.Date;
@@ -30,7 +25,6 @@ public final class DateUtil {
     public static String getCurrentDateTime(String format){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(format);
         LocalDateTime localDateTime = LocalDateTime.now();
-
         return localDateTime.format(formatter);
     }
 
@@ -43,45 +37,13 @@ public final class DateUtil {
         return getCurrentDateTime("yyyy-MM-dd HH:mm:ss:SSS");
     }
 
+    /**
+     * 获取当前日期
+     *
+     * @return
+     */
     public static String getCurrentDate(){
         return getCurrentDateTime("yyyy-MM-dd");
-    }
-    /**
-     * 获取当前时间戳(毫秒级)
-     *
-     * @return 时间戳
-     */
-    public static String getTimeStampMillis(){
-        Instant timestamp = Instant.now();
-
-        return String.valueOf(timestamp.toEpochMilli());
-    }
-
-    /**
-     * 获取当前时间戳(秒级)
-     *
-     * @return 时间戳
-     */
-    public static String getTimeStampSecond(){
-        Instant timestamp = Instant.now();
-
-        return String.valueOf(timestamp.toEpochMilli()).substring(0,10);
-    }
-
-
-    /**
-     * 从 yyyy-MM-dd 格式的日期字符串总获取对应的 年、月、日
-     * @param dateStr 符合 yyyy-MM-dd 格式的日期字符串
-     *
-     * @return int[] 分别为 年、月、日的值的数组
-     * */
-    public static int[] getDateFromStr(String dateStr){
-        String[] strArr = dateStr.split("-");
-        int[] arr  = new int[strArr.length];
-        for (int i = 0; i < strArr.length; i++) {
-            arr[i] = Integer.parseInt(strArr[i]);
-        }
-        return arr;
     }
 
     /**
@@ -92,7 +54,7 @@ public final class DateUtil {
      * @return 距离 指定日期 n 天前/后的日期(格式: yyyy-MM-dd 字符串)
      * */
     public static String getAppointedDate(String dateStr, int days){
-        int[] arr= getDateFromStr(dateStr);
+        int[] arr= getDateArrFromStr(dateStr);
         LocalDate appointedDate = LocalDate.of(arr[0],arr[1],arr[2]);
         if(days > 0){
             appointedDate = appointedDate.plusDays(days);
@@ -102,17 +64,28 @@ public final class DateUtil {
         return appointedDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
     }
 
-
     /**
      * 获取某一日期所在月份的第一天
      * @param dateStr 符合 yyyy-MM-dd 格式的日期字符串
      *
      * @return 指定日期所在月的第一天日期(格式: yyyy-MM-dd 字符串)
      */
-    public static String getMonthFirstDay(String dateStr){
-        int[] arr= getDateFromStr(dateStr);
+    public static String getMonthFirstDayStr(String dateStr){
+        int[] arr= getDateArrFromStr(dateStr);
         LocalDate appointedDate = LocalDate.of(arr[0],arr[1],1);
         return appointedDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+    }
+
+    /**
+     * 获取某一日期所在月份的第一天
+     * @param dateStr 符合 yyyy-MM-dd 格式的日期字符串
+     *
+     * @return 指定日期所在月的第一天日期
+     */
+    public static Date getMonthFirstDayDate(String dateStr){
+        int[] arr= getDateArrFromStr(dateStr);
+        LocalDate appointedDate = LocalDate.of(arr[0],arr[1],1);
+        return Date.from(appointedDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
     }
 
     /**
@@ -121,11 +94,24 @@ public final class DateUtil {
      *
      * @return 指定日期所在月的最后一天日期(格式: yyyy-MM-dd 字符串)
      */
-    public static String getMonthLastDay(String dateStr){
-        int[] arr= getDateFromStr(dateStr);
+    public static String getMonthLastDayStr(String dateStr){
+        int[] arr= getDateArrFromStr(dateStr);
         LocalDate appointedDate = LocalDate.of(arr[0],arr[1],arr[2]);
         appointedDate = appointedDate.with(TemporalAdjusters.lastDayOfMonth());
         return appointedDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+    }
+
+    /**
+     * 获取某一日期所在月份的最后一天
+     * @param dateStr 符合 yyyy-MM-dd 格式的日期字符串
+     *
+     * @return 指定日期所在月的最后一天日期
+     */
+    public static Date getMonthLastDayDate(String dateStr){
+        int[] arr= getDateArrFromStr(dateStr);
+        LocalDate appointedDate = LocalDate.of(arr[0],arr[1],arr[2]);
+        appointedDate = appointedDate.with(TemporalAdjusters.lastDayOfMonth());
+        return Date.from(appointedDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
     }
 
     /**
@@ -143,17 +129,52 @@ public final class DateUtil {
 
     /**
      * 将string类型时间转换为date类型时间
-     * @param strTime
+     *
+     * @param dateStr
      * @return
      */
-    public static Date getDateTimeByString(String strTime) {
-        try {
-            SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
-            return sdf.parse(strTime);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        return null;
+    public static Date getDateFromString(String dateStr) {
+        LocalDateTime localDateTime = LocalDateTime.parse(dateStr, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        return Date.from(localDateTime.atZone(ZoneId.systemDefault()).toInstant());
     }
+
+    /**
+     * 获取一天的最小时间
+     * @param date
+     * @return
+     */
+    public static long getStartOfDay(Date date) {
+        LocalDateTime localDateTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(date.getTime()), ZoneId.systemDefault());
+        LocalDateTime startOfDay = localDateTime.with(LocalTime.MIN);
+        return startOfDay.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli();
+    }
+
+    /**
+     * 获取一天的最大时间
+     *
+     * @param date
+     * @return
+     */
+    public static long getEndOfDay(Date date) {
+        LocalDateTime localDateTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(date.getTime()), ZoneId.systemDefault());;
+        LocalDateTime endOfDay = localDateTime.with(LocalTime.MAX);
+        return endOfDay.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli();
+    }
+
+    /**
+     * 从 yyyy-MM-dd 格式的日期字符串总获取对应的 年、月、日
+     * @param dateStr 符合 yyyy-MM-dd 格式的日期字符串
+     *
+     * @return int[] 分别为 年、月、日的值的数组
+     * */
+    public static int[] getDateArrFromStr(String dateStr){
+        String[] strArr = dateStr.split("-");
+        int[] arr  = new int[strArr.length];
+        for (int i = 0; i < strArr.length; i++) {
+            arr[i] = Integer.parseInt(strArr[i]);
+        }
+        return arr;
+    }
+
 
 }
