@@ -27,7 +27,7 @@
     <mybatis>3.4.6</mybatis>
     <servlet-api.version>4.0.1</servlet-api.version>
     <hutool.version>5.4.0</hutool.version>
-    <mysql.version>8.0.18</mysql.version>
+    <mysql.version>8.0.28</mysql.version>
     <auth.jwt.version>3.8.3</auth.jwt.version>
     <spring.version>5.2.8.RELEASE</spring.version>
     <jedis.version>3.3.0</jedis.version>
